@@ -35,6 +35,25 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurple[300],
+        elevation: 0,
+        title: Text('A P P B A R'),
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.menu),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.share),
+            ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.person),
+            )
+        ],
+      ),
       body: _pages[_selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectedIndex,
