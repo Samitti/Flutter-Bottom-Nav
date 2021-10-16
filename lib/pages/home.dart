@@ -5,10 +5,12 @@ class UserHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'This is Home Page',
-        style: TextStyle(fontSize: 30),
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'This is Home Page',
+          style: TextStyle(fontSize: 30),
+        ),
       ),
     );
   }
