@@ -70,6 +70,7 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
+      endDrawer: Drawer(),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
