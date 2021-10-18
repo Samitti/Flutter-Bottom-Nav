@@ -1,50 +1,35 @@
 import 'package:flutter/material.dart';
 
-import 'tabs/first_tab.dart';
-import 'tabs/second_tab.dart';
-import 'tabs/third_tab.dart';
+class Home extends StatefulWidget {
+  const Home({ Key? key }) : super(key: key);
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  double boxHight = 300;
+  double boxWidth = 300;
+
+  void _shrinkBox () {
+    setState(() {
+      boxHight = 100;
+      boxWidth = 100;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
+    return GestureDetector(
+      onTap: _shrinkBox,
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('T A B  A B'),
-        ),
-        body: Column(
-          children: [
-            TabBar(tabs: [
-              Tab(
-                icon: Icon(
-                  Icons.home,
-                  color: Colors.deepPurple,
-                ),
-              ),
-              Tab(
-                icon: Icon(
-                  Icons.settings,
-                  color: Colors.deepPurple,
-                ),
-              ),
-              Tab(
-                icon: Icon(
-                  Icons.person,
-                  color: Colors.deepPurple,
-                ),
-              ),
-            ]),
-            Expanded(
-              child: TabBarView(children: [
-                FirstTab(),
-                SecondTab(),
-                ThirdTab(),
-              ]),
-            )
-          ],
+        body: Center(
+          child: AnimatedContainer(
+            duration: Duration(milliseconds: 200),
+            height: boxHight,
+            width: boxWidth,
+            color: Colors.amber,
+          ),
         ),
       ),
     );
