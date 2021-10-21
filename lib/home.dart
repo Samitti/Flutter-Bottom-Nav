@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:avatar_glow/avatar_glow.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -33,14 +34,16 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.deepPurple[200],
       body: Center(
-        child: MaterialButton(
-          color: Colors.deepPurple[600],
-          onPressed: _showDialog,
-          child: Text(
-            'Show DIALOG',
-            style: TextStyle(fontSize: 30),
-          ),
-        ),
+        child: AvatarGlow(child: Icon(Icons.menu), endRadius: 70)
+
+        // child: MaterialButton(
+        //   color: Colors.deepPurple[600],
+        //   onPressed: _showDialog,
+        //   child: Text(
+        //     'Show DIALOG',
+        //     style: TextStyle(fontSize: 30),
+        //   ),
+        // ),
       ),
     );
   }
